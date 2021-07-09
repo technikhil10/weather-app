@@ -25,7 +25,7 @@ form.addEventListener('submit',function(e){
 
     messageOne.textContent = 'Loading...'
 
-    fetch(`http://localhost:3000/weather?address=${locationInput.value}`)
+    fetch(`/weather?address=${locationInput.value}`)
     .then((res)=>res.json())
     .then(data=>{
         if(data.error)

@@ -7,6 +7,9 @@ const forecast = require('./utils/forecast')
 const path = require('path') //it's core module so no need of installation
 const app = express()
 
+//port number dynamic for heroku
+const port = process.env.PORT || 3000
+
 const publicDirectoryPath = path.join(__dirname,'../public')  //setting path of public directory---__dirname gives current directory of app.js file
 
 const viewsPath = path.join(__dirname,'../templates/views') //setting path of templates
@@ -105,6 +108,6 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(3000, () =>{         //app.listen(port_number,callback function)
-    console.log('Server is up and running on 3000');
+app.listen(port, () =>{         //app.listen(port_number,callback function)
+    console.log(`Server is up and running on ${port}`);
 })
